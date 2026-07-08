@@ -1,0 +1,38 @@
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+
+-- Create UI
+local gui = Instance.new("ScreenGui")
+gui.Name = "TeleportUI"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 200, 0, 100)
+frame.Position = UDim2.new(0.5, -100, 0.5, -50)
+frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(1, -20, 0, 40)
+button.Position = UDim2.new(0, 10, 0, 30)
+button.Text = "Teleport"
+button.TextScaled = true
+button.Parent = frame
+
+button.MouseButton1Click:Connect(function()
+	local character = player.Character or player.CharacterAdded:Wait()
+	local hrp = character:WaitForChild("HumanoidRootPart")
+
+	hrp.CFrame = CFrame.new(
+		3441.21094,
+		-2.97166348,
+		1112.20642,
+		-0.859241366, 0.0883421451, -0.503884852,
+		-5.07808406e-10, 0.98497653, 0.172688141,
+		0.511570394, 0.148380801, -0.84633261
+	)
+end)
