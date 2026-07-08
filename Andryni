@@ -1,6 +1,7 @@
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
+local enabled = false
 
 -- Create UI
 local gui = Instance.new("ScreenGui")
@@ -9,30 +10,42 @@ gui.ResetOnSpawn = false
 gui.Parent = player:WaitForChild("PlayerGui")
 
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 200, 0, 100)
-frame.Position = UDim2.new(0.5, -100, 0.5, -50)
+frame.Size = UDim2.new(0, 220, 0, 100)
+frame.Position = UDim2.new(0.5, -110, 0.5, -50)
 frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 frame.Active = true
 frame.Draggable = true
 frame.Parent = gui
 
-local button = Instance.new("TextButton")
-button.Size = UDim2.new(1, -20, 0, 40)
-button.Position = UDim2.new(0, 10, 0, 30)
-button.Text = "Teleport"
-button.TextScaled = true
-button.Parent = frame
+local toggle = Instance.new("TextButton")
+toggle.Size = UDim2.new(1, -20, 0, 40)
+toggle.Position = UDim2.new(0, 10, 0, 30)
+toggle.TextScaled = true
+toggle.Text = "☐ Auto Teleport"
+toggle.Parent = frame
 
-button.MouseButton1Click:Connect(function()
-	local character = player.Character or player.CharacterAdded:Wait()
-	local hrp = character:WaitForChild("HumanoidRootPart")
+toggle.MouseButton1Click:Connect(function()
+	enabled = not enabled
 
-	hrp.CFrame = CFrame.new(
-		3441.21094,
-		-2.97166348,
-		1112.20642,
-		-0.859241366, 0.0883421451, -0.503884852,
-		-5.07808406e-10, 0.98497653, 0.172688141,
-		0.511570394, 0.148380801, -0.84633261
-	)
+	if enabled then
+		toggle.Text = "☑ Auto Teleport"
+
+		task.spawn(function()
+			while enabled do
+				local character = player.Character or player.CharacterAdded:Wait()
+				local hrp = character:WaitForChild("HumanoidRootPart")
+
+				hrp.CFrame = CFrame.new(
+					3441.14722, -4.05327702, 1162.48682,
+					0.259863973, 0.282543659, -0.923384964,
+					1.15453309e-08, 0.956236243, 0.292595714,
+					0.965645254, -0.0760350972, 0.248491347
+				)
+
+				task.wait(0.1)
+			end
+		end)
+	else
+		toggle.Text = "☐ Auto Teleport"
+	end
 end)
