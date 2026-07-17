@@ -1,0 +1,427 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Grindscript/Grind-Lib/refs/heads/main/source"))()
+
+local window = library:Window("+1 Strength Per Click💪")
+
+-- Name of the toggle, default state, callback
+local Farm = false
+
+window:Toggle("Fast Train", false, function(bool)
+    Farm = bool
+
+    if Farm then
+        task.spawn(function()
+            while Farm do
+                local Event = game:GetService("ReplicatedStorage").Remotes.Events.ClickRemote
+                Event:FireServer()
+                task.wait()
+            end
+        end)
+    end
+end)
+
+---WIN
+-- Name of the toggle, default state, callback
+local example = false
+
+window:Toggle("WORLD 1🏆", false, function(bool)
+    example = bool
+
+    if example then
+        task.spawn(function()
+            while example do
+                local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+local Event = ReplicatedStorage.Remotes.Events:WaitForChild("WallBreakFinished")
+
+local targets = CFrame.new(1855.8717, 31.7001762, -1542.14722, 0.996865511, 0.00320010725, 0.0790497884, 4.24544927e-10, 0.999181628, -0.0404490493, -0.079114534, 0.0403222628, 0.996049702)
+
+
+RunService.RenderStepped:Connect(function()
+    while example do
+    hrp.CFrame = targets
+    task.wait(0.5)
+
+    if (hrp.Position - targets.Position).Magnitude < 2 then
+    end
+    end
+end)
+
+while example do
+    Event:FireServer()
+    task.wait()
+    end
+            end
+        end)
+    end
+end)
+
+-- Name of the toggle, default state, callback
+local example2 = false
+
+window:Toggle("WORLD 2🏆", false, function(bool)
+    example2 = bool
+
+    if example2 then
+        task.spawn(function()
+            while example2 do
+                local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+local Event = ReplicatedStorage.Remotes.Events:WaitForChild("WallBreakFinished")
+
+local targets = CFrame.new(1855.54089, 30.9602528, -823.687378, 0.999967396, 0.00044899917, -0.00805887766, 1.01755847e-10, 0.998451531, 0.0556285903, 0.00807137601, -0.0556267798, 0.998418987)
+
+
+RunService.RenderStepped:Connect(function()
+    while example2 do
+    hrp.CFrame = targets
+    task.wait(0.5)
+
+    if (hrp.Position - targets.Position).Magnitude < 2 then
+    end
+    end
+end)
+
+while example2 do
+    Event:FireServer()
+    task.wait()
+    end
+            end
+        end)
+    end
+end)
+
+local example3 = false
+
+window:Toggle("WORLD 3🏆", false, function(bool)
+    example3 = bool
+
+    if example3 then
+        task.spawn(function()
+            while example3 do
+                local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+local Event = ReplicatedStorage.Remotes.Events:WaitForChild("WallBreakFinished")
+
+local targets = CFrame.new(1852.6814, 31.3450336, -424.134399, 0.99996388, -0.00110674056, 0.00842517242, 3.75719345e-10, 0.991482198, 0.130242229, -0.00849755295, -0.13023752, 0.991446435)
+
+
+RunService.RenderStepped:Connect(function()
+    while example3 do
+    hrp.CFrame = targets
+    task.wait(0.5)
+
+    if (hrp.Position - targets.Position).Magnitude < 8 then
+    end
+    end
+end)
+
+while example3 do
+    Event:FireServer()
+    task.wait()
+    end
+            end
+        end)
+    end
+end)
+
+-- Name of the toggle, default state, callback
+local example4 = false
+
+window:Toggle("WORLD 4🏆", false, function(bool)
+    example4 = bool
+
+    if example4 then
+        task.spawn(function()
+            while example4 do
+                local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+local Event = ReplicatedStorage.Remotes.Events:WaitForChild("WallBreakFinished")
+
+local targets = CFrame.new(1864.88245, 30.2957172, 1063.36865, 0.993832707, 0.0207101479, 0.108938523, 1.8984454e-09, 0.982404888, -0.186763614, -0.110889636, 0.185611799, 0.976346135)
+
+
+RunService.RenderStepped:Connect(function()
+    while example4 do
+    hrp.CFrame = targets
+    task.wait(0.5)
+
+    if (hrp.Position - targets.Position).Magnitude < 2 then
+    end
+    end
+end)
+
+while example4 do
+    Event:FireServer()
+    task.wait()
+    end
+            end
+        end)
+    end
+end)
+
+-- Name of the toggle, default state, callback
+local example5 = false
+
+window:Toggle("BUY BEST EGG🥚", false, function(bool)
+    example5 = bool
+
+    if example5 then
+        task.spawn(function()
+            while example5 do
+                local Event = game:GetService("ReplicatedStorage").Remotes.HatchPet
+Event:FireServer("Sus", 3)
+                task.wait(1) -- Prevents freezing
+            end
+        end)
+    end
+end)
+
+-- Name of the toggle, default state, callback
+local example6 = false
+
+window:Toggle("AUTO ROLL TITLE", false, function(bool)
+    example6 = bool
+
+    if example6 then
+        task.spawn(function()
+            while example6 do
+                local Event2 = game:GetService("ReplicatedStorage").Remotes.Events.TitleRoll
+Event2:FireServer("Normal")
+                task.wait(0.1) -- Prevents freezing
+            end
+        end)
+    end
+end)
+
+--DROPDOWN WORLD
+window:Dropdown("UNLOCK WORLDS🌎", {"WORLD 2🌎", "WORLD 3🌎", "WORLD 4🌎"}, function(name)
+    if name == "WORLD 2🌎" then
+        --WORLD 1
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local Stage = workspace:WaitForChild("Stage")
+local Event = ReplicatedStorage.Remotes.Events:WaitForChild("WallBreakFinished")
+
+local currentLane = 1
+
+local function teleportToLane(laneNumber)
+    local lane = Stage:FindFirstChild("Lane"..laneNumber)
+    if not lane then
+        print("Finished all lanes!")
+        return false
+    end
+
+    local wall = lane.Walls:FindFirstChild("Wall1")
+    if wall then
+        hrp.CFrame = wall.CFrame + Vector3.new(0,3,0)
+    end
+
+    return true
+end
+
+teleportToLane(currentLane)
+
+while true do
+    -- Wait until your own game decides the lane is finished
+    Event:FireServer()
+
+    currentLane += 1
+
+    if not teleportToLane(currentLane) then
+        break
+    end
+
+    task.wait(0.4)
+end
+
+--Wall7 of last lane
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local wall = workspace:WaitForChild("Stage")
+    :WaitForChild("Lane25")
+    :WaitForChild("Walls")
+    :WaitForChild("Wall7")
+
+hrp.CFrame = wall.CFrame + Vector3.new(0, 3, 0)
+
+task.wait(0.5)
+
+--Lastly the winpart
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local win = workspace:WaitForChild("WorldPart")
+    :WaitForChild("TouchPart")
+
+hrp.CFrame = win.CFrame
+
+task.wait(0.5)
+
+        -- Put your own game logic here
+    elseif name == "WORLD 3🌎" then
+        --WORLD 2
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local Stage = workspace:WaitForChild("Stage")
+local Event = ReplicatedStorage.Remotes.Events:WaitForChild("WallBreakFinished")
+
+local currentLane = 1
+
+local function teleportToLane(laneNumber)
+    local lane = Stage:FindFirstChild("Lane"..laneNumber)
+    if not lane then
+        print("Finished all lanes!")
+        return false
+    end
+
+    local wall = lane.Walls:FindFirstChild("Wall1")
+    if wall then
+        hrp.CFrame = wall.CFrame + Vector3.new(0,3,0)
+    end
+
+    return true
+end
+
+teleportToLane(currentLane)
+
+while true do
+    -- Wait until your own game decides the lane is finished
+    Event:FireServer()
+
+    currentLane += 1
+
+    if not teleportToLane(currentLane) then
+        break
+    end
+
+    task.wait(0.4)
+end
+
+--Wall7 of last lane
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local wall = workspace:WaitForChild("Stage")
+    :WaitForChild("Lane20")
+    :WaitForChild("Walls")
+    :WaitForChild("Wall5")
+
+hrp.CFrame = wall.CFrame + Vector3.new(0, 3, 0)
+
+task.wait(0.5)
+
+--Lastly the winpart
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local win = workspace:WaitForChild("WorldPart")
+    :WaitForChild("TouchPart")
+
+hrp.CFrame = win.CFrame
+
+task.wait(0.5)
+    elseif name == "WORLD 4🌎" then
+        --WORLD 3
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local Stage = workspace:WaitForChild("Stage")
+local Event = ReplicatedStorage.Remotes.Events:WaitForChild("WallBreakFinished")
+
+local currentLane = 1
+
+local function teleportToLane(laneNumber)
+    local lane = Stage:FindFirstChild("Lane"..laneNumber)
+    if not lane then
+        print("Finished all lanes!")
+        return false
+    end
+
+    local wall = lane.Walls:FindFirstChild("Wall1")
+    if wall then
+        hrp.CFrame = wall.CFrame + Vector3.new(0,3,0)
+    end
+
+    return true
+end
+
+teleportToLane(currentLane)
+
+while true do
+    -- Wait until your own game decides the lane is finished
+    Event:FireServer()
+
+    currentLane += 1
+
+    if not teleportToLane(currentLane) then
+        break
+    end
+
+    task.wait(0.4)
+end
+
+--Wall7 of last lane
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local wall = workspace:WaitForChild("Stage")
+    :WaitForChild("Lane20")
+    :WaitForChild("Walls")
+    :WaitForChild("Wall7")
+
+hrp.CFrame = wall.CFrame + Vector3.new(0, 3, 0)
+
+task.wait(0.5)
+
+--Lastly the winpart
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local win = workspace:WaitForChild("WorldPart")
+    :WaitForChild("TouchPart")
+
+hrp.CFrame = win.CFrame
+
+task.wait(0.5)
+    end
+end)
+
+-- Text, color: setting color to true will make it rainbow
+window:Label("Made By: Grind Script👽", Color3.fromRGB(235, 235, 240))
