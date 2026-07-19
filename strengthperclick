@@ -141,7 +141,7 @@ local RunService = game:GetService("RunService")
 local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
 local Event = ReplicatedStorage.Remotes.Events:WaitForChild("WallBreakFinished")
 
-local targets = CFrame.new(1864.88245, 30.2957172, 1063.36865, 0.993832707, 0.0207101479, 0.108938523, 1.8984454e-09, 0.982404888, -0.186763614, -0.110889636, 0.185611799, 0.976346135)
+local targets = CFrame.new(1865.49377, 29.0250225, -1770.81042, 0.999443054, -0.00644374406, 0.0327419974, 5.58839142e-10, 0.981179178, 0.193099603, -0.0333700515, -0.192992061, 0.980632722)
 
 
 RunService.RenderStepped:Connect(function()
