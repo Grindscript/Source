@@ -1,0 +1,140 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Grindscript/Grind-Lib/refs/heads/main/source"))()
+
+local window = library:Window("Climb And Drop A Lucky")
+
+--- AUTO CLIMB 
+local example = false
+
+window:Toggle("Auto Climb", false, function(bool)
+    example = bool
+
+    if example then
+        task.spawn(function()
+            while example do
+                local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+local targets = {
+    CFrame.new(
+        -469.796722, 18.6153107, 24.8440914,
+        -0.997117341, 4.4598746e-08, -0.0758751109,
+        4.52935822e-08, 1, -7.43682005e-09,
+        0.0758751109, -1.08520375e-08, -0.997117341
+    ),
+
+    CFrame.new(
+        -471.374756, 10017.166, 27.4526749,
+        -0.999887168, -4.13355572e-08, -0.0150215812,
+        -4.2734321e-08, 1, 9.27959434e-08,
+        0.0150215812, 9.34274169e-08, -0.999887168
+    ),
+    
+    CFrame.new(
+        -470.705841, 17.0371895, 12.394803, 0.995509505, -1.00995706e-07, -0.0946617052, 9.56660742e-08, 1, -6.08400299e-08, 0.0946617052, 5.15109129e-08, 0.995509505
+    )
+}
+
+for _, cf in ipairs(targets) do
+    hrp.CFrame = CFrame.new(cf.Position) * CFrame.Angles(0, math.rad(180), 0)
+    task.wait(1)
+    end
+end
+end)
+end
+end)
+
+-- AUTO SELL BLOCK
+local example2 = false
+
+window:Toggle("Auto Sell Block", false, function(bool2)
+    example2 = bool2
+
+    if example2 then
+        task.spawn(function()
+            while example2 do
+                local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+local Event = game:GetService("ReplicatedStorage").Packages.Knit.Services.LuckyBlockService.RE.remote
+
+local targets = {
+    CFrame.new(
+        -469.796722, 18.6153107, 24.8440914,
+        -0.997117341, 4.4598746e-08, -0.0758751109,
+        4.52935822e-08, 1, -7.43682005e-09,
+        0.0758751109, -1.08520375e-08, -0.997117341
+    ),
+
+    CFrame.new(
+        -472.37207, 10018.3633, 68.8758926,
+        -0.934840798, 6.85330903e-08, 0.355067164,
+        4.70674024e-08, 1, -6.90927422e-08,
+        -0.355067164, -4.7878622e-08, -0.934840798
+    ),
+
+    CFrame.new(
+        -499.489075, 17.0371895, -6.23013687,
+        0.0977071002, 1.12538627e-08, 0.995215237,
+        -4.06195149e-08, 1, -7.32007299e-09,
+        -0.995215237, -3.97099349e-08, 0.0977071002
+    )
+}
+
+-- Target 1
+hrp.CFrame = CFrame.new(targets[1].Position) * CFrame.Angles(0, math.rad(180), 0)
+task.wait(1)
+
+-- Target 2 (Sell)
+hrp.CFrame = CFrame.new(targets[2].Position) * CFrame.Angles(0, math.rad(180), 0)
+task.wait(0.5)
+
+for i = 1, 20 do
+    Event:FireServer({
+        kind = "requestSell"
+    })
+    task.wait(0.05)
+end
+
+-- Target 3
+hrp.CFrame = CFrame.new(targets[3].Position) * CFrame.Angles(0, math.rad(180), 0)
+            end
+        end)
+    end
+end)
+
+-- Name of the toggle, default state, callback
+local example3 = false
+
+window:Toggle("Upgrade All Brainrots", false, function(bool3)
+    example3 = bool3
+
+    if example3 then
+        task.spawn(function()
+            while example3 do
+                local Event2 = game:GetService("ReplicatedStorage").Packages.Knit.Services.PlotService.RE.remote
+
+                for i = 1, 30 do
+                    Event2:FireServer({
+                        stand = "Stand" .. i,
+                        kind = "upgradeBrainrot"
+                    })
+
+                    task.wait(0.2)
+                end
+            end
+        end)
+    end
+end)
+
+-- Collect Money
+window:Button("Collect Money", function()
+    local Event = game:GetService("ReplicatedStorage").Packages.Knit.Services.PlotService.RE.remote
+
+    for i = 1, 30 do
+        Event:FireServer({
+            stand = "Stand" .. i,
+            kind = "collectMoney"
+        })
+
+        task.wait(0.2)
+    end
+end)
+
+window:Label("Made By: Grind Script👽", Color3.fromRGB(235, 235, 240))
